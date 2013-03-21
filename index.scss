@@ -1,0 +1,63 @@
+.callback-options {
+  position: relative;
+  
+  .callback-options-child {
+    background: $lighter-grey;
+  }
+
+  .callback-options-day {
+    padding: 5px;
+    position: absolute;
+    right: 0;
+    top: 20px;
+
+    .select.small {
+      width: 180px;
+    }
+
+    &:after {
+      @include triangle($direction: 'left', $width: 7px, $height: 10px, $color: $lighter-grey);
+      content: '';
+      display: block;
+      left: -7px;
+      margin-top: -5px;
+      position: absolute;
+      top: 50%;
+    }
+  }
+
+  .callback-options-hours {
+    margin-top: 5px;
+    overflow: hidden;
+    padding: 10px 0;
+
+    .weekend {
+      display: none;
+    }
+
+    &.is-weekend {
+      .weekday {
+        display: none;
+      }
+      .weekend {
+        display: block;
+      }
+    }
+
+    .hours {
+      cursor: pointer;
+      float: left;
+      font-size: 12px;
+      margin: 0 21px;
+      text-align: center;
+    }
+
+    .hours span {
+      display: block;
+    }
+  }
+
+  .callback-options-time {
+    display: block;
+  }
+}
